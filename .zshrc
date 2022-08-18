@@ -18,13 +18,6 @@ if [ -d "$HOME/Applications" ] ;
 fi
 PATH="$HOME/.emacs.d/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin
-shopt -s autocd
-shopt -s cdspell
-shopt -s cmdhist
-shopt -s dotglob
-shopt -s histappend
-shopt -s expand_aliases
-shopt -s checkwinsize
 export TERM="xterm-256color"
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 bindkey -v
