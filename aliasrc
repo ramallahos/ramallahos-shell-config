@@ -1,0 +1,262 @@
+# alias ll="ls -alFh"
+# alias ls="ls --color=auto"
+[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
+alias ......='cd ../../../../..'
+alias .....='cd ../../../..'
+alias ....='cd ../../..'
+alias ...='cd ../..'
+alias ..='cd ..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
+alias addall='git add .'
+alias addup='git add -u'
+alias albumart='sp metadata | grep -Po "(?<=url\|).*" | xargs curl -s | grep -Po "https:[^\"]*" | grep "i.scdn.co/image/" | head -1 | xargs curl -s | kitty +kitten icat' #  * `albumart` Show hi-res album art of currently playing song in Spotify #    - Requires [sp](https://gist.github.com/wandernauta/6800547)
+alias apt-get='man pacman'
+alias apt='man pacman'
+alias audio="pactl info | grep 'Server Name'"
+alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages according to size in MB
+alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
+alias branch='git branch'
+alias btrfsfs="sudo btrfs filesystem df /"
+alias btrfsli="sudo btrfs su li / -t"
+alias bupskel="cp -Rf /etc/skel ~/.skel-backup-(date +%Y.%m.%d-%H.%M.%S)"
+alias cat='bat --style header --style rules --style snip --style changes --style header'
+alias cb="cp /etc/skel/.bashrc ~/.bashrc && echo "Copied.""
+alias ccat='pygmentize -g' #  * `ccat` Cat file, but with syntax highlighting
+alias cd..="cd .."
+alias cf="cp /etc/skel/.config/fish/config.fish ~/.config/fish/config.fish && exec fish"
+alias checkout='git checkout'
+alias clean="clear; seq 1 (tput cols) | sort -R | sparklines | lolcat"
+alias cleanup='sudo pacman -Rns (pacman -Qtdq)' # Cleanup orphaned packages
+alias clear='echo -en "\x1b[2J\x1b[1;1H" ; echo; echo; seq 1 (tput cols) | sort -R | spark | lolcat; echo; echo'
+alias clone='git clone'
+alias commit='git commit -m'
+alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME" # bare git repo alias for dotfiles
+alias connect=nmtui #  * `connect` command Connect to wifi from terminal
+alias cp='cp -ir' #  * `cp` to ask when overwriting files
+alias cremove="paru -Rns"
+alias cz="cp /etc/skel/.zshrc ~/.zshrc && echo "Copied.""
+alias df='df -h'
+alias df='df -h'                          # human-readable sizes
+alias dir='dir --color=auto'
+alias disks='lsblk -o HOTPLUG,NAME,SIZE,MODEL,TYPE | awk "NR == 1 || /disk/"' #  * `disks` command to List disks #    - Clearly shows which disks are mounted temporary #    - I always run this command before `dd` sd-card, to make 100% sure not to override system partition
+alias doas="doas --"
+alias doomdoctor="~/.emacs.d/bin/doom doctor"
+alias doompurge="~/.emacs.d/bin/doom purge"
+alias doomsync="~/.emacs.d/bin/doom sync"
+alias doomupgrade="~/.emacs.d/bin/doom upgrade"
+alias downgrada="sudo downgrade --ala-url https://ant.seedhost.eu/arcolinux/"
+alias du='du -ch'
+alias egrep="egrep --color=auto"
+alias em='/usr/bin/emacs -nw'
+alias emacs="emacsclient -c -a 'emacs'"
+alias fetch='git fetch'
+alias fgrep='fgrep --color=auto'
+alias fix-gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+alias free="free -mt"
+alias fs='df -h -x squashfs -x tmpfs -x devtmpfs' #  * `fs` command to show free space on physical drives
+alias ga="git add"
+alias gai="git add -p"
+alias gb="git bisect"
+alias gch="git checkout"
+alias gci="git checkout -p"
+alias gclean="git branch --merged | egrep -v \"(^\*|main|master|dev|build|next)\" | xargs git branch -d"
+alias gcleanremote="git branch --merged | egrep -v \"(^\*|main|master|dev|build|next)\" | xargs git push --delete"
+alias gf="git fetch --all"
+alias git-show-unpushed-commits='git cherry -v' #  * `git-show-unpushed-commits` Git show unpushed commits
+alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
+alias give-me-azerty-be="sudo localectl set-x11-keymap be"
+alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
+alias gl1="git log -n 1"
+alias gl="git log"
+alias gm="git commit -m"
+alias gma="git commit -m -a"
+alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+alias gpick="git cherry-pick"
+alias gprune="git fetch -a --prune"
+alias gpull="git pull"
+alias gpush="git push"
+alias gr="git rebase --rebase-merges"
+alias gra="git rebase --abort"
+alias grc="git rebase --continue"
+alias grep="grep --color=auto"
+alias gri="git rebase --rebase-merges -i"
+alias grs="git restore"
+alias grubup="sudo update-grub"
+alias gs="git status"
+alias gtree="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) -%C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(bold green)(%ar)%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias gw="git switch"
+alias hw="hwinfo --short"                              # Hardware Info
+alias icat="kitty +kitten icat"
+alias ip="ip -color"
+alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
+alias isoo="cat /etc/dev-rel"
+alias jctl="journalctl -p 3 -xb" # Get the error messages from journalctl
+alias kc="killall conky"
+alias kp="killall polybar"
+alias kpi="killall picom"
+alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
+alias l="ls"
+alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+alias lapkg="paru -Qm"
+alias lcalamares="bat /var/log/Calamares.log"
+alias lepkg="paru -Qe"
+alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+alias localip="ip -o route get to 1.1.1.1 | sed -n 's/.*src \([0-9.]\+\).*/\1/p'" #  * `localip` Shows (local) internal ip
+alias lockblock='killall xautolock; xset s off; xset -dpms; echo ok' #  * `lockblock` command to prevent screen  locking untill next reboot
+alias lopkg="paru -Qeq"
+alias lorpkg="paru -Qdt"
+alias lpacman="bat /var/log/pacman.log"
+alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias lxorg="bat /var/log/Xorg.0.log"
+alias lxorgo="bat /var/log/Xorg.0.log.old"
+alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
+alias merge="xrdb -merge ~/.Xresources"
+alias merge='xrdb -merge ~/.Xresources'
+alias microcode="grep . /sys/devices/system/cpu/vulnerabilities/*"
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias mkdir='mkdir -pv' #  * Create missing directories in path when calling `mkdir`
+alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc -O MOCDir="$XDG_CONFIG_HOME"/moc'
+alias mv='mv -ir' #  * `mv` to ask when overwriting files
+alias narcomirrorlist="sudo $EDITOR /etc/pacman.d/arcolinux-mirrorlist"
+alias nb="$EDITOR ~/.bashrc"
+alias ncmpcpp='ncmpcpp ncmpcpp_directory=$HOME/.config/ncmpcpp/'
+alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
+alias newtag='git tag -a'
+alias nf="$EDITOR ~/.config/fish/config.fish"
+alias nfstab="sudo $EDITOR /etc/fstab"
+alias ngnupgconf="sudo $EDITOR /etc/pacman.d/gnupg/gpg.conf"
+alias ngrub="sudo $EDITOR /etc/default/grub"
+alias nhostname="sudo $EDITOR /etc/hostname"
+alias nhosts="sudo $EDITOR /etc/hosts"
+alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
+alias nlxdm="sudo $EDITOR /etc/lxdm/lxdm.conf"
+alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
+alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
+alias nneofetch="$EDITOR ~/.config/neofetch/config.conf"
+alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
+alias npacman="sudo $EDITOR /etc/pacman.conf"
+alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
+alias nsddm="sudo $EDITOR /etc/sddm.conf"
+alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
+alias nz="$EDITOR ~/.zshrc"
+alias pacman="sudo pacman --color auto"
+alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
+alias pacsyyu='sudo pacman -Syyu'                # Refresh pkglist & update standard pkgs
+alias parsua='paru -Sua --noconfirm'             # update only AUR pkgs (paru)
+alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs (paru)
+alias partitions='lsblk -o HOTPLUG,NAME,LABEL,MOUNTPOINT,SIZE,MODEL,PARTLABEL,TYPE,UUID | grep -v loop | cut -c1-$COLUMNS' #  * `partitions` command to list partitions
+alias paruskip="paru -S --mflags --skipinteg"
+alias path='readlink -e' #  * `path` command to print full file path
+alias pdw="pwd"
+alias pksyua="paru -Syu --noconfirm"
+alias playavi='vlc *.avi'
+alias playmov='vlc *.mov'
+alias playmp3='deadbeef *.mp3'
+alias playmp4='vlc *.mp4'
+alias playogg='deadbeef *.ogg'
+alias playwav='deadbeef *.wav'
+alias please='sudo'
+alias probe="sudo -E hw-probe -all -upload"
+alias psa="ps auxf"
+alias pscpu='ps auxf | sort -nr -k 3'
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias psmem='ps auxf | sort -nr -k 4'
+alias pull='git pull origin'
+alias push='git push origin'
+alias ram="rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist"
+alias rams="rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist"
+alias rg="rg --sort path"
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"  # Recent installed packages
+alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
+alias rm='rm -rvI'
+alias rmgitcache="rm -r ~/.cache/git"
+alias rmpkg="sudo pacman -Rdd"
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash' # the terminal rickroll
+alias server-here='python3 -m http.server 8888 && xdg-open http://localhost:8888' #  * `server-here` Start serving files in current directory and open browser
+alias setlocale="sudo localectl set-locale LANG=en_US.UTF-8"
+alias setlocales="sudo localectl set-x11-keymap be && sudo localectl set-locale LANG=en_US.UTF-8"
+alias sharewifi='qr "WIFI:T:WPA;S:aaa;P:bbb;;"'
+alias sizeof="du -hs" #  * `sizeof` command to show size of file or directory
+alias snapch="sudo snapper -c home create"
+alias snapchome="sudo snapper -c home create-config /home"
+alias snapcr="sudo snapper -c root create"
+alias snapcroot="sudo snapper -c root create-config /"
+alias snapli="sudo snapper list"
+alias sr="sudo reboot"
+alias ssn="sudo shutdown now"
+alias start-vmware="sudo systemctl enable --now vmtoolsd.service"
+alias sv="sudo systemctl enable --now vmtoolsd.service"
+alias sysfailed="systemctl list-units --failed"
+alias tag='git tag'
+alias tarnow='tar -acf '
+alias tb="nc termbin.com 9999" # termbin
+alias tips="lbrynet txo spend --type=support --is_not_my_input --blocking" # Unlock LBRY tips
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
+alias togdm="sudo pacman -S gdm --noconfirm --needed ; sudo systemctl enable gdm.service -f ; echo 'Gdm is active - reboot now'"
+alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
+alias tolxdm="sudo pacman -S lxdm --noconfirm --needed ; sudo systemctl enable lxdm.service -f ; echo 'Lxdm is active - reboot now'"
+alias toly="sudo pacman -S ly --noconfirm --needed ; sudo systemctl enable ly.service -f ; echo 'Ly is active - reboot now'"
+alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+alias trizenskip="trizen -S --skipinteg"
+alias udpate="sudo pacman -Syyu"
+alias undopush "git push -f origin HEAD^:master"
+alias unhblock="hblock -S none -D none"
+alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
+alias unset 'set --erase' #  * `unset` to unset enviroment variable
+alias untar='tar -xvf '
+alias upal="paru -Syu --noconfirm"
+alias upall="paru -Syu --noconfirm"
+alias upate="sudo pacman -Syyu"
+alias upd='/usr/bin/update'
+alias update-fc="sudo fc-cache -fv"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias update="topgrade"
+alias updqte="sudo pacman -Syyu"
+alias updte="sudo pacman -Syyu"
+alias upqll="paru -Syu --noconfirm"
+alias userlist="cut -d: -f1 /etc/passwd | sort"
+alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
+alias vdir='vdir --color=auto'
+alias vifm='./.config/vifm/scripts/vifmrun'
+alias vim='nvim'
+alias vmware-start="sudo systemctl enable --now vmtoolsd.service"
+alias wget='wget --content-disposition' #  * `wget` to save file with provided name
+alias whereami='curl ifconfig.co/json' #  * `whereami` is like whoami but shows your external ip and geolocation
+alias xd="ls /usr/share/xsessions"
+alias xkcd='curl -sL https://c.xkcd.com/random/comic/ | grep -Po "https:[^\"]*" | grep png | xargs curl -s | convert -resize 50% -negate -fuzz 10% -transparent black png: png:- | kitty +kitten icat' #  * `xkcd` Print color-adjusted xkcd in your terminal! See <https://developer.run/40>
+alias xll="exa -lag --icons --color=always --group-directories-first --octal-permissions"
+alias xls="exa -a --icons --color=always --group-directories-first"
+alias yayskip="paru -S --mflags --skipinteg"
+alias yaysua='paru -Sua --noconfirm'              # update only AUR pkgs (yay)
+alias yaysyu='paru -Syu --noconfirm'              # update standard pkgs and AUR pkgs (yay)
+alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+alias yta-best="youtube-dl --extract-audio --audio-format best "
+alias yta-flac="youtube-dl --extract-audio --audio-format flac "
+alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+alias yta-opus="youtube-dl --extract-audio --audio-format opus "
+alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
+alias yta-wav="youtube-dl --extract-audio --audio-format wav "
+alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4"
+alias gc="git clone"
+alias +x="chmod +x"
+alias +w="chmod +w"
+alias +r="chmod +r"
+alias -x="chmod -x"
+alias -w="chmod -w"
+alias -r="chmod -r"
