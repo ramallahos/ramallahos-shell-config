@@ -6,6 +6,9 @@ fpath=($HOME/.zsh/functions $fpath)
 e_normal=`echo -e "¥033[0;30m"`
 e_RED=`echo -e "¥033[1;31m"`
 e_BLUE=`echo -e "¥033[1;36m"`
+LANG=en_US.UTF-8
+export LC_MESSAGES="C"
+export LC_ALL=en_US.UTF-8
 if [ -d "$HOME/.bin" ] ;
   then PATH="$HOME/.bin:$PATH"
 fi
