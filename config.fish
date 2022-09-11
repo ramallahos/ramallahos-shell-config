@@ -10,6 +10,10 @@ set -x SUDO_EDITOR "rvim -u NONE"
 set TERM "xterm-256color"                         # Sets the terminal type
 set VISUAL "emacsclient -c -a emacs"              # $VISUAL use Emacs in GUI mode
 
+set LANG en_US.UTF-8
+set export LC_MESSAGES C
+set LC_ALL en_US.UTF-8
+
 #set -x TERM alacritty
 # Sets the terminal type for proper colors
 set TERM "xterm-256color"
