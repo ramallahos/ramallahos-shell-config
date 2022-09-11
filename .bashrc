@@ -4,6 +4,9 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 ### EXPORT ###
+LANG=en_US.UTF-8
+export LC_MESSAGES="C"
+export LC_ALL=en_US.UTF-8
 export EDITOR='nvim'
 export VISUAL='emacsclient -c -a "emacs"'
 export HISTCONTROL=ignoreboth:erasedups
