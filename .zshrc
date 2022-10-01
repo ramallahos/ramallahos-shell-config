@@ -87,6 +87,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+[ -f "/usr/share/resources/ramallahos-shell-config/aliasrc" ] && source "/usr/share/resources/ramallahos-shell-config/aliasrc"
 [ -f "$HOME/.config/promt_prefix" ] && source "$HOME/.config/promt_prefix"
 [ -f "$HOME/.config/promt" ] && source "$HOME/.config/promt"
 autoload -U promptinit; promptinit
