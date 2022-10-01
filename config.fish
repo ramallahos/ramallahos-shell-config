@@ -204,6 +204,11 @@ if [ -f $HOME/.config/aliasrc ]
     source $HOME/.config/aliasrc
 end
 
+if [ -f /usr/share/resources/ramallahos-shell-config/aliasrc ]
+    source /usr/share/resources/ramallahos-shell-config/aliasrc
+end
+
+
 if [ -f $HOME/.config/fish/conf.d/abbreviations.fish ]
     source $HOME/.config/fish/conf.d/abbreviations.fish
 end
