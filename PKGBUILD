@@ -14,9 +14,10 @@ sha256sums=('SKIP')
 package() {
     cd "$pkgname"
     install -d "${pkgdir}/etc/skel/.config/fish/"
-	install -Dm 755 ".bashrc" "${pkgdir}/etc/skel/.bashrc"
-	install -Dm 755 "config.fish" "${pkgdir}/etc/skel/.config/fish/config.fish"
-    install -Dm 755 "aliasrc" "${pkgdir}/etc/skel/.config/aliasrc"
+    install -d "${pkgdir}/usr/share/resources/${pkgname}/"
+    install -Dm 755 ".bashrc" "${pkgdir}/etc/skel/.bashrc"
+    install -Dm 755 "config.fish" "${pkgdir}/etc/skel/.config/fish/config.fish"
+    install -Dm 755 "aliasrc" "${pkgdir}/usr/share/resources/${pkgname}/aliasrc"
     install -Dm 755 ".zshrc" "${pkgdir}/etc/skel/.zshrc"
     install -Dm 755 ".zprofile" "${pkgdir}/etc/skel/.zprofile"
     install -Dm 755 ".zcompdump" "${pkgdir}/etc/skel/.zcompdump"
