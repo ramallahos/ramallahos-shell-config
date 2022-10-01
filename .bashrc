@@ -3,6 +3,7 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+[ -f "/usr/share/resources/ramallahos-shell-config/aliasrc" ] && source "/usr/share/resources/ramallahos-shell-config/aliasrc"
 ### EXPORT ###
 LANG=en_US.UTF-8
 export LC_MESSAGES="C"
