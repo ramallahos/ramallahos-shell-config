@@ -262,3 +262,13 @@ alias -w="chmod -w"
 alias -r="chmod -r"
 alias weather="curl wttr.in"
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias public-ip='curl ifconfig.co'
+alias private-ip="ip a | grep '/24' | awk '{ print $2 }' | cut -c -14"
+alias brave-tor='brave --incognito --tor'
+alias totty='sudo chvt' 
+alias deltty='deallocvt'
+
+
+
+
+
