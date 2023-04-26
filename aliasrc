@@ -262,3 +262,4 @@ alias -w="chmod -w"
 alias -r="chmod -r"
 alias weather="curl wttr.in"
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias unshorten='curl https://unshorten.me/s/'
