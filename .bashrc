@@ -53,4 +53,8 @@ ex ()
   fi
 }
 
+unshorten() {
+  curl https://unshorten.me/s/$1
+}
+
 colorscript random
