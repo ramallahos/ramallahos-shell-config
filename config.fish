@@ -828,6 +828,10 @@ function qr --description "Prints QR. E.g. super useful when you need to transfe
   end
 end
 
+function unshorten --description "URL unshortener"
+	curl https://unshorten.me/s/$1
+end
+
 if status --is-interactive && type -q neofetch
    colorscript random
 end
