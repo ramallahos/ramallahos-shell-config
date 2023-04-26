@@ -289,6 +289,11 @@ if [[ -n "${key[Alt-Right]}" ]]; then
 fi
 
 
+function unshorten() {
+	curl https://unshorten.me/s/$1
+}
+
+
 colorscript random
 
 
