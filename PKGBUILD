@@ -20,7 +20,7 @@ package() {
     install -Dm 755 "config.fish" "${pkgdir}/etc/skel/.config/fish/config.fish"
     install -Dm 755 "config.fish" "${pkgdir}/root/.config/fish/config.fish"
     install -Dm 755 "aliasrc" "${pkgdir}/usr/share/resources/${pkgname}/aliasrc"
-    install -Dm 755 ".zshrc" "${pkgdir}/etc/skel/.zshrc"
+    install -Dm 755 ".zshrc" "${pkgdir}/etc/skel/.config/zsh/.zshrc"
     install -Dm 755 ".zprofile" "${pkgdir}/etc/skel/.zprofile"
     install -Dm 755 ".zcompdump" "${pkgdir}/etc/skel/.zcompdump"
     install -Dm 755 ".zshenv" "${pkgdir}/etc/skel/.zshenv"
