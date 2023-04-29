@@ -1,3 +1,5 @@
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
 if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep bspwm || startx "$XDG_CONFIG_HOME/X11/xinitrc"
 fi
