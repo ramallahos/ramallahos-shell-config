@@ -1,6 +1,6 @@
-HISTFILE=~/.zsh_history
-HISTSIZE=20000
-SAVEHIST=20000
+HISTFILE=~/.cache/.zsh_history
+HISTSIZE=99999
+SAVEHIST=99999
 fpath=(~/.zsh/functions/ $fpath)
 fpath=($HOME/.zsh/functions $fpath)
 e_normal=`echo -e "¥033[0;30m"`
