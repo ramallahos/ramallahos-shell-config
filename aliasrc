@@ -267,7 +267,7 @@ alias private-ip="ip a | grep '/24' | awk '{ print $2 }' | cut -c -14"
 alias brave-tor='brave --incognito --tor'
 alias totty='sudo chvt' 
 alias deltty='deallocvt'
-
+alias man='batman'
 
 
 
